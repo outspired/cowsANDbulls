@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:controller="cab.MainController">
+    <!--<TextField fx:id="txt"/>-->
+    <!--<Label text="${'Hello, ' + txt.text + '!'}"/>-->
+
+    <top>
+        <HBox>
+            <Spinner fx:id="num1" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num2" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num3" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num4" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Button text="GO!" onAction="#go"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="turns">
+            <columns>
+                <TableColumn text="turn #">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="turnNr"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="guess">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="guess"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="bulls">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bulls"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="cows">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cows"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
